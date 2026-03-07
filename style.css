@@ -123,6 +123,10 @@ header img{
     margin: 10px;
     border: 2px solid black;
     border-radius: 10px;
+    cursor: pointer;
+}
+.item:hover{
+    background-color: lightgray;
 }
 
 main{
@@ -140,11 +144,9 @@ main{
 }
 
 .status{
-    display: flex;
-    justify-content: center;
+    overflow: hidden;
     height: 95%;
     width: 22%;
-    padding: 10px 15px;
     border: solid 1px black;
     border-radius: 10px;
 }
@@ -153,6 +155,7 @@ main{
     height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     width: 75%;
 
@@ -160,5 +163,30 @@ main{
     scrollbar-width: thin;
     overflow: auto;
 }
+.container h1 , .container p   {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    justify-content: center;
+}
 
 
+.head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color:  rgb(106, 100, 95);
+    color: white;
+    height: 7vh;
+
+}
+.print{
+    font-size: large;
+    width: 100%;
+    margin: 5px 10px;
+}
+.print1{
+    width: 100%;
+    margin: 5px 10px;
+}

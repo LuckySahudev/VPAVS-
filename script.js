@@ -1,4 +1,3 @@
-
 const selectBox = document.querySelector(".selectBox");
 const op1 = document.querySelector("[name='TypeOfProperty']");
 let htu = document.querySelector(".howToUse");
@@ -10,12 +9,15 @@ let houseType = ["2bhk", "3bhk"];
 let check = 0 ; 
 const main = document.querySelector("main");
 const container = document.querySelector(".container");
+let statusof = document.querySelector(".status");
 const item = document.querySelectorAll(".item");
 
 
 // funtion for adding second select menu
 op1.addEventListener("change",secondselect );
 addEventListener("load",secondselect());
+
+// funtion to adding second option 
 function secondselect(){
     check ++;
     // Remove old dynamic select only
@@ -74,7 +76,6 @@ document.addEventListener("click", (e) => {
 
 
 // funtion for submit button 
-
 btn1.addEventListener("click",(e)=>{
     if( check === 0) return;
     console.log(op1.value);
@@ -84,8 +85,7 @@ btn1.addEventListener("click",(e)=>{
     loadData(op1.value,op2.value);
 })
 
-
-
+// funtion to add items on container 
 async function loadData(var1 , var2) {
     container.innerHTML = "";
     if( var1 === "plot"){
@@ -105,19 +105,16 @@ async function loadData(var1 , var2) {
             let h2 = document.createElement("h2");
             h2.innerText = `${val["price"]}/-`;
             let h3 = document.createElement("h3");
-            h3.innerText = `Area : ${val["area_sqft"]} sqrf Plot`
+            h3.innerText = `Area  :  ${val["area_sqft"]} sqrf Plot`
             let h4 = document.createElement("h4");
-            h4.innerText = `Location : Sector ${val["sector"]}`
+            h4.innerText = `Location  :  Sector ${val["sector"]}`
             let b = document.createElement("b");
             b.setAttribute("id","id");
             b.innerText = `${val["id"]}`;
             let p = document.createElement("p");
-            p.innerText = `Distance from Main Road : ${val["distance_from_main_road_km"]} || Plot id : `
+            p.innerText = `Distance from Main Road  :  ${val["distance_from_main_road_km"]} || Plot id  :  `
             p.append(b);
-            item.append(h2);
-            item.append(h3);
-            item.append(h4);
-            item.append(p);
+            item.append(h2,h3,h4,p);
             container.append(item);
         }
     }
@@ -132,25 +129,23 @@ async function loadData(var1 , var2) {
             let h2 = document.createElement("h2");
             h2.innerText = `${val["price"]}/-`;
             let h3 = document.createElement("h3");
-            h3.innerHTML = `Area : ${val["area_sqft"]} sqrf ${val["bhk"]}BHk House`
+            h3.innerHTML = `Area  :  ${val["area_sqft"]} sqrf ${val["bhk"]}BHk House`
             let h4 = document.createElement("h4");
-            h4.innerText = `Location : Sector ${val["sector"]}`
+            h4.innerText = `Location  :  Sector ${val["sector"]}`
             let b = document.createElement("b");
             b.setAttribute("id","id");
             b.innerText = `${val["id"]}`;
             let p = document.createElement("p");
-            p.innerText = `Distance from Main Road : ${val["distance_from_main_road_km"]} || House id : `
+            p.innerText = `Distance from Main Road  :  ${val["distance_from_main_road_km"]} || House id  :  `
             p.append(b);
-            item.append(h2);
-            item.append(h3);
-            item.append(h4);
-            item.append(p);
+            item.append(h2,h3,h4,p);
             container.append(item);
         }
     }
     return;
 }
 
+// EventListener for click on item 
 addEventListener("click",(e)=>{
     if (e.target.classList.contains("item") || e.target.parentElement.classList.contains("item")){
         let target = e.target;
@@ -163,110 +158,149 @@ addEventListener("click",(e)=>{
     }
 })
 
-
+// fatching data 
 async function fatchDetail(id) {
-    let URL = '';
-    if(id[0]==='p') URL = `./data/plot.json`;
-    else if(id[0]=== '2') URL = `./data/2bhk.json`;
-    else URL = `./data/3bhk.json`;
 
-    let response = await fetch(URL);
-        let data = await response.json();
-        let finalEl
-        for( val of data){
-            if(val["id"]===id){ 
-                finalEl = val ; 
-                break;
-            }
+    let URL = '';
+    if(id.charAt(0) == 'P'){
+        URL = "./data/plot.json";
+    }
+    else if(id.charAt(0) == '2'){
+        URL = "./data/2bhk.json";
+    }
+    else if(id.charAt(0) == '3'){
+        URL = "./data/3bhk.json";
+    }
+
+    let response = await fetch(URL);   
+    console.log(response);
+    let data = await response.json();
+    console.log(data);
+
+    let finalEl = "";
+
+    for(let val of data){
+        if(val["id"] === id){
+            finalEl = val;
+            break;
         }
-        printDetail(finalEl,data);
+    }
+
+    if(!finalEl){
+        console.log("ID not found");
+        return;
+    }
+
+    printDetail(finalEl);
     return;
 }
 
+// printing data on status 
 function printDetail(finalEl){
 
+    statusof.innerHTML = "";
     
     let head = document.createElement("h2");
     head.classList.add("head");
-    head.innerText = `${finalEl["type"].toUpperCase()} ID : ${finalEl["id"]}`;
+    head.innerText = `${(finalEl["type"])} ID  :  ${finalEl["id"]}`;
+ 
+    let price = document.createElement("h2");
+    price.classList.add("print1");
+    price.innerText = `Price  :  ${finalEl["price"]}/-`;
 
-    let price = document.createElement("h3");
-    price.classList.add("print");
-    price.innerText = `Price : ${finalEl["price"]}`;
+    let area = document.createElement("h3");
+    area.classList.add("print1");     
+    area.innerText = `Area of ${finalEl["type"]} is  :  ${finalEl["area_sqft"]}`;   // 201
 
-    let area = document.createElement("h2");
-    area.classList.add("print");
-    area.innerText = `Area of ${finalEl["type"].toUpperCase()} is : ${finalEl["area_sqft"]}`;
-
-    let sector = document.createElement("h2");
-    sector.classList.add("print");
-    sector.innerText = `Sector : ${finalEl["sector"]}`;
+    let sector = document.createElement("h3");
+    sector.classList.add("print1");
+    sector.innerText = `Sector  :  ${finalEl["sector"]}`;
 
     let cornerProperty = document.createElement("p");
     cornerProperty.classList.add("print");
-    cornerProperty.innerText = `Corner Property : ${finalEl["corner"]}`
+    cornerProperty.innerText = `Corner Property  :  ${finalEl["corner_property"]}`
 
     let disFromMRoad = document.createElement("p");
     disFromMRoad.classList.add("print");
-    disFromMRoad.innerText = `Distance of Property form Main road : ${finalEl["distance_from_main_road_km"]}`
+    disFromMRoad.innerText = `Distance of Property form Main road  :  ${finalEl["distance_from_main_road_km"]}`
     
     let facing = document.createElement("p");
     facing.classList.add("print");
-    facing.innerText = `Facing : ${finalEl["facing"]}`
+    facing.innerText = `Facing  :  ${finalEl["facing"]}`
 
     let registrationStatus = document.createElement("p");
     registrationStatus.classList.add("print");
-    registrationStatus.innerText = `Registration Status : ${finalEl["registration_status"]}`
+    registrationStatus.innerText = `Registration Status  :  ${finalEl["registration_statusof"]}`
 
     let owner = document.createElement("p");
     owner.classList.add("print");
-    owner.innerText = `Owner Name : ${finalEl["owner_name"]}`
+    owner.innerText = `Owner Name  :  ${finalEl["owner_name"]}`
 
     let ownerPhone = document.createElement("p");
     ownerPhone.classList.add("print");
-    ownerPhone.innerText = `Owner Contact: ${finalEl["loan_approved"]}`
+    ownerPhone.innerText = `Owner Contact: ${finalEl["owner_phone"]}`
 
     let loanApprovel = document.createElement("p");
     loanApprovel.classList.add("print");
-    loanApprovel.innerText = `Loan Approvel : ${finalEl["loan_approved"]}`
+    loanApprovel.innerText = `Loan Approvel  :  ${finalEl["loan_approved"]}`
+
+    // for plot type details only 
+    if( finalEl["type"] === "plot"){
+        // only for plot 
+        let landType = document.createElement("p");
+        landType.classList.add("print");
+        landType.innerText = `Land Type  :  ${finalEl["land_type"]}`
+
+        let boundryWall = document.createElement("p");
+        boundryWall.classList.add("print");
+        if(finalEl["boundary_wall"]=== true) boundryWall.innerText = `Boundray Wall  :  Available`;
+        else boundryWall.innerText = `Boundray Wall  :  Not Available`;
+
+        let soilType = document.createElement("p");
+        soilType.classList.add("print");
+        soilType.innerText = `Soil Type  :  ${finalEl["soil_type"]}`
 
 
-
-    // only for plot 
-    let landType = document.createElement("p");
-    landType.classList.add("print");
-    landType.innerText = `Land Type : ${finalEl["land_type"]}`
-
+        statusof.append(head,price,area,sector,cornerProperty,disFromMRoad,facing,registrationStatus,owner,ownerPhone,loanApprovel,landType,boundryWall,soilType);
     
-    let boundryWall = document.createElement("p");
-    boundryWall.classList.add("print");
-    if(finalEl["boundary_wall"]=== true) boundryWall.innerText = `Boundray Wall : Available`;
-    else boundryWall.innerText = `Boundray Wall : Not Available`;
+    }
+    // for house type details only 
+    else{
+        let bhk = document.createElement("p");
+        bhk.classList.add("print");
+        bhk.innerText = `BHK  :  ${finalEl["bhk"]}`
+
+        let floors = document.createElement("p");
+        floors.classList.add("print");
+        floors.innerText = `Number of Floors  :  ${finalEl["floors"]}`
+
+        let bathrooms = document.createElement("p");
+        bathrooms.classList.add("print");
+        bathrooms.innerText = `Number of Bathrooms  :  ${finalEl["bathrooms"]}`
+
+        let balcony = document.createElement("p");
+        balcony.classList.add("print");
+        balcony.innerText = `Number of Balconies  :  ${finalEl["balcony"]}`
+
+        let parking = document.createElement("p");
+        parking.classList.add("print");
+        if(finalEl["parking_available"] === true ){
+            parking.innerText = `Parking  :  Available`
+        }
+        else parking.innerText = `Parking  :  Not Available`
 
 
-    let soilType = document.createElement("p");
-    soilType.classList.add("print");
-    soilType.innerText = `Soil Type : ${finalEl["soil_type"]}`
+        let constuctYear = document.createElement("p");
+        constuctYear.classList.add("print");
+        constuctYear.innerText = `Construction Year  :  ${finalEl["construction_year"]}`
+
+        let furnishStatus = document.createElement("p");
+        furnishStatus.classList.add("print");
+        furnishStatus.innerText = `FurnishStatus  :  ${finalEl["furnished_statusof"]}`
 
 
+        statusof.append(head,price,area,sector,cornerProperty,disFromMRoad,facing,registrationStatus,owner,ownerPhone,loanApprovel,bhk,floors,bathrooms,balcony,parking,constuctYear,furnishStatus);
+    }
+    return;
 }
 
-
-// extera in house
-//     "bhk": 2,
-//     "floors": 3,
-//     "bathrooms": 1,
-//     "balcony": 3,
-//     "parking_available": false,
-//     "construction_year": 2026,
-//     "furnished_status": "unfurnished",
-
-
-
-
-
-
-// extera in plot 
-//     "land_type": "commercial",
-//     "boundary_wall": false,
-//     "soil_type": "clay",
