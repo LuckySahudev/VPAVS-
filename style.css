@@ -138,7 +138,7 @@ main{
     padding: 10px;
     width: 100% - 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content:  space-around;
     height: 100% ;
     flex-wrap: wrap;
 }
@@ -157,7 +157,7 @@ main{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 75%;
+    width: 74%;
 
     overflow-y: scroll;
     scrollbar-width: thin;
@@ -189,4 +189,8 @@ main{
 .print1{
     width: 100%;
     margin: 5px 10px;
+}
+
+.status h1{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }

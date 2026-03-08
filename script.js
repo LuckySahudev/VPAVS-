@@ -65,6 +65,7 @@ htu.innerHTML = `<h3>How to Use</h3>
         <li>The specific property details will be displayed.</li>
         </ul>`
 
+// funtion for visibility of the how to use bar 
 b1.addEventListener("click", () => {
     htu.style.visibility = "visible";
 });
@@ -199,108 +200,125 @@ async function fatchDetail(id) {
 function printDetail(finalEl){
 
     statusof.innerHTML = "";
-    
-    let head = document.createElement("h2");
-    head.classList.add("head");
-    head.innerText = `${(finalEl["type"])} ID  :  ${finalEl["id"]}`;
- 
-    let price = document.createElement("h2");
-    price.classList.add("print1");
-    price.innerText = `Price  :  ${finalEl["price"]}/-`;
-
-    let area = document.createElement("h3");
-    area.classList.add("print1");     
-    area.innerText = `Area of ${finalEl["type"]} is  :  ${finalEl["area_sqft"]}`;   // 201
-
-    let sector = document.createElement("h3");
-    sector.classList.add("print1");
-    sector.innerText = `Sector  :  ${finalEl["sector"]}`;
-
-    let cornerProperty = document.createElement("p");
-    cornerProperty.classList.add("print");
-    cornerProperty.innerText = `Corner Property  :  ${finalEl["corner_property"]}`
-
-    let disFromMRoad = document.createElement("p");
-    disFromMRoad.classList.add("print");
-    disFromMRoad.innerText = `Distance of Property form Main road  :  ${finalEl["distance_from_main_road_km"]}`
-    
-    let facing = document.createElement("p");
-    facing.classList.add("print");
-    facing.innerText = `Facing  :  ${finalEl["facing"]}`
-
-    let registrationStatus = document.createElement("p");
-    registrationStatus.classList.add("print");
-    registrationStatus.innerText = `Registration Status  :  ${finalEl["registration_statusof"]}`
-
-    let owner = document.createElement("p");
-    owner.classList.add("print");
-    owner.innerText = `Owner Name  :  ${finalEl["owner_name"]}`
-
-    let ownerPhone = document.createElement("p");
-    ownerPhone.classList.add("print");
-    ownerPhone.innerText = `Owner Contact: ${finalEl["owner_phone"]}`
-
-    let loanApprovel = document.createElement("p");
-    loanApprovel.classList.add("print");
-    loanApprovel.innerText = `Loan Approvel  :  ${finalEl["loan_approved"]}`
-
-    // for plot type details only 
-    if( finalEl["type"] === "plot"){
-        // only for plot 
-        let landType = document.createElement("p");
-        landType.classList.add("print");
-        landType.innerText = `Land Type  :  ${finalEl["land_type"]}`
-
-        let boundryWall = document.createElement("p");
-        boundryWall.classList.add("print");
-        if(finalEl["boundary_wall"]=== true) boundryWall.innerText = `Boundray Wall  :  Available`;
-        else boundryWall.innerText = `Boundray Wall  :  Not Available`;
-
-        let soilType = document.createElement("p");
-        soilType.classList.add("print");
-        soilType.innerText = `Soil Type  :  ${finalEl["soil_type"]}`
-
-
-        statusof.append(head,price,area,sector,cornerProperty,disFromMRoad,facing,registrationStatus,owner,ownerPhone,loanApprovel,landType,boundryWall,soilType);
-    
+    let h1 = document.createElement("h1");
+    h1.innerText = "Loading";
+    statusof.appendChild(h1);
+    statusof.style.display = "flex";
+    statusof.style.justifyContent = "center";
+    statusof.style.alignItems = "center";
+    for (let i = 1; i <= 2; i++) {
+        setTimeout(() => {
+            h1.innerText += ".";
+        },200);
     }
-    // for house type details only 
-    else{
-        let bhk = document.createElement("p");
-        bhk.classList.add("print");
-        bhk.innerText = `BHK  :  ${finalEl["bhk"]}`
 
-        let floors = document.createElement("p");
-        floors.classList.add("print");
-        floors.innerText = `Number of Floors  :  ${finalEl["floors"]}`
+    setTimeout(()=> {
+        statusof.style.display = "inline";
+        statusof.innerHTML = "";
+        let head = document.createElement("h2");
+        head.classList.add("head");
+        head.innerText = `${(finalEl["type"])} ID  :  ${finalEl["id"]}`;
+    
+        let price = document.createElement("h2");
+        price.classList.add("print1");
+        price.innerText = `Price  :  ${finalEl["price"]}/-`;
 
-        let bathrooms = document.createElement("p");
-        bathrooms.classList.add("print");
-        bathrooms.innerText = `Number of Bathrooms  :  ${finalEl["bathrooms"]}`
+        let area = document.createElement("h3");
+        area.classList.add("print1");     
+        area.innerText = `Area of ${finalEl["type"]} is  :  ${finalEl["area_sqft"]}`;   // 201
 
-        let balcony = document.createElement("p");
-        balcony.classList.add("print");
-        balcony.innerText = `Number of Balconies  :  ${finalEl["balcony"]}`
+        let sector = document.createElement("h3");
+        sector.classList.add("print1");
+        sector.innerText = `Sector  :  ${finalEl["sector"]}`;
 
-        let parking = document.createElement("p");
-        parking.classList.add("print");
-        if(finalEl["parking_available"] === true ){
-            parking.innerText = `Parking  :  Available`
+        let cornerProperty = document.createElement("p");
+        cornerProperty.classList.add("print");
+        cornerProperty.innerText = `Corner Property  :  ${finalEl["corner_property"]}`
+
+        let disFromMRoad = document.createElement("p");
+        disFromMRoad.classList.add("print");
+        disFromMRoad.innerText = `Distance of Property form Main road  :  ${finalEl["distance_from_main_road_km"]}`
+        
+        let facing = document.createElement("p");
+        facing.classList.add("print");
+        facing.innerText = `Facing  :  ${finalEl["facing"]}`
+
+        let registrationStatus = document.createElement("p");
+        registrationStatus.classList.add("print");
+        registrationStatus.innerText = `Registration Status  :  ${finalEl["registration_statusof"]}`
+
+        let owner = document.createElement("p");
+        owner.classList.add("print");
+        owner.innerText = `Owner Name  :  ${finalEl["owner_name"]}`
+
+        let ownerPhone = document.createElement("p");
+        ownerPhone.classList.add("print");
+        ownerPhone.innerText = `Owner Contact: ${finalEl["owner_phone"]}`
+
+        let loanApprovel = document.createElement("p");
+        loanApprovel.classList.add("print");
+        loanApprovel.innerText = `Loan Approvel  :  ${finalEl["loan_approved"]}`
+
+        // for plot type details only 
+        if( finalEl["type"] === "plot"){
+            // only for plot 
+            let landType = document.createElement("p");
+            landType.classList.add("print");
+            landType.innerText = `Land Type  :  ${finalEl["land_type"]}`
+
+            let boundryWall = document.createElement("p");
+            boundryWall.classList.add("print");
+            if(finalEl["boundary_wall"]=== true) boundryWall.innerText = `Boundray Wall  :  Available`;
+            else boundryWall.innerText = `Boundray Wall  :  Not Available`;
+
+            let soilType = document.createElement("p");
+            soilType.classList.add("print");
+            soilType.innerText = `Soil Type  :  ${finalEl["soil_type"]}`
+
+
+            statusof.append(head,price,area,sector,cornerProperty,disFromMRoad,facing,registrationStatus,owner,ownerPhone,loanApprovel,landType,boundryWall,soilType);
+        
         }
-        else parking.innerText = `Parking  :  Not Available`
+        // for house type details only 
+        else{
+            let bhk = document.createElement("p");
+            bhk.classList.add("print");
+            bhk.innerText = `BHK  :  ${finalEl["bhk"]}`
+
+            let floors = document.createElement("p");
+            floors.classList.add("print");
+            floors.innerText = `Number of Floors  :  ${finalEl["floors"]}`
+
+            let bathrooms = document.createElement("p");
+            bathrooms.classList.add("print");
+            bathrooms.innerText = `Number of Bathrooms  :  ${finalEl["bathrooms"]}`
+
+            let balcony = document.createElement("p");
+            balcony.classList.add("print");
+            balcony.innerText = `Number of Balconies  :  ${finalEl["balcony"]}`
+
+            let parking = document.createElement("p");
+            parking.classList.add("print");
+            if(finalEl["parking_available"] === true ){
+                parking.innerText = `Parking  :  Available`
+            }
+            else parking.innerText = `Parking  :  Not Available`
 
 
-        let constuctYear = document.createElement("p");
-        constuctYear.classList.add("print");
-        constuctYear.innerText = `Construction Year  :  ${finalEl["construction_year"]}`
+            let constuctYear = document.createElement("p");
+            constuctYear.classList.add("print");
+            constuctYear.innerText = `Construction Year  :  ${finalEl["construction_year"]}`
 
-        let furnishStatus = document.createElement("p");
-        furnishStatus.classList.add("print");
-        furnishStatus.innerText = `FurnishStatus  :  ${finalEl["furnished_statusof"]}`
+            let furnishStatus = document.createElement("p");
+            furnishStatus.classList.add("print");
+            furnishStatus.innerText = `FurnishStatus  :  ${finalEl["furnished_statusof"]}`
 
 
-        statusof.append(head,price,area,sector,cornerProperty,disFromMRoad,facing,registrationStatus,owner,ownerPhone,loanApprovel,bhk,floors,bathrooms,balcony,parking,constuctYear,furnishStatus);
-    }
-    return;
+            statusof.append(head,price,area,sector,cornerProperty,disFromMRoad,facing,registrationStatus,owner,ownerPhone,loanApprovel,bhk,floors,bathrooms,balcony,parking,constuctYear,furnishStatus);
+        }
+        return;
+    }, 405);
 }
+
+
 
