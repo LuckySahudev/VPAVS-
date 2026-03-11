@@ -11,6 +11,8 @@ const main = document.querySelector("main");
 const container = document.querySelector(".container");
 let statusof = document.querySelector(".status");
 const item = document.querySelectorAll(".item");
+const b2 = document.querySelector("#b3");
+const searchInput = document.querySelector("#search");
 
 
 // funtion for adding second select menu
@@ -188,8 +190,8 @@ async function fatchDetail(id) {
     }
 
     if(!finalEl){
-        console.log("ID not found");
-        return;
+        container.innerHTML = "Data is not Available";
+        return ;
     }
 
     printDetail(finalEl);
@@ -321,4 +323,40 @@ function printDetail(finalEl){
 }
 
 
+// funtion to search button 
+b3.addEventListener("click",()=>{
+    searchData();
+    return;
+})
+searchInput.addEventListener("keydown",(e)=>{
+    if(e.key === "Enter"){
+        searchData();
+    }
+    return;
+})
 
+async function searchData(){
+    let input = searchInput.value;
+    input = input.trim().toUpperCase();
+    console.log(input);
+    let URL = '';
+    if(input.length <= 2){
+        container.innerHTML = "Invalid Input";
+        return;
+    } 
+    let idx0 = input.charAt(0);
+    let idx1 = input.charAt(1);
+
+    if( idx0 == 'P'){
+        container.innerHTML = `<h1> << Property id ${input} data showed in Status Bar </h1>`
+        fatchDetail(input);
+    }
+    else if((idx0 == '2' || idx0 == '3') && idx1 == 'H'){
+        container.innerHTML = `<h1> << Property id ${input} data showed in Status Bar </h1>`
+        fatchDetail(input);
+    }
+    else{
+        container.innerHTML = "Invalid Input";
+    }
+    return;
+}
