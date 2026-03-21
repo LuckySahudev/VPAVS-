@@ -3,15 +3,16 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 
-// IMPORTANT
-const db = require("./config/db");
-
 const propertyRoutes = require("./routes/propertyRoutes");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send("VPAVS Property API Running");
+});
 
 app.use("/api/properties", propertyRoutes);
 

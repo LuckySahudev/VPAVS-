@@ -1,46 +1,52 @@
 const db = require("../config/db");
 
-// get all sectors
-const getSectors = (callback) => {
-  const sql = "SELECT * FROM sector_details";
-  db.query(sql, callback);
+// get sectors
+exports.getSectors = async () => {
+  const [rows] = await db.query("SELECT * FROM sector_details");
+  return rows;
 };
 
-// get house by id
-const getHouseById = (id, callback) => {
-  const sql = "SELECT * FROM house_details WHERE id = ?";
-  db.query(sql, [id], callback);
+// house by id
+exports.getHouseById = async (id) => {
+  const [rows] = await db.query(
+    "SELECT * FROM house_details WHERE id = ?",
+    [id]
+  );
+  return rows;
 };
 
-// get plot by id
-const getPlotById = (id, callback) => {
-  const sql = "SELECT * FROM plot_details WHERE id = ?";
-  db.query(sql, [id], callback);
+// plot by id
+exports.getPlotById = async (id) => {
+  const [rows] = await db.query(
+    "SELECT * FROM plot_details WHERE id = ?",
+    [id]
+  );
+  return rows;
 };
 
-// get houses by bhk
-const getHouseByBhk = (bhk, callback) => {
-  const sql = "SELECT * FROM house_details WHERE bhk = ?";
-  db.query(sql, [bhk], callback);
+// house by bhk
+exports.getHouseByBhk = async (bhk) => {
+  const [rows] = await db.query(
+    "SELECT * FROM house_details WHERE bhk = ?",
+    [bhk]
+  );
+  return rows;
 };
 
-// get plots by area range
-const getPlotByRange = (min, max, callback) => {
-  const sql = "SELECT * FROM plot_details WHERE area_sqft BETWEEN ? AND ?";
-  db.query(sql, [min, max], callback);
+// plot range
+exports.getPlotByRange = async (min, max) => {
+  const [rows] = await db.query(
+    "SELECT * FROM plot_details WHERE area_sqft BETWEEN ? AND ?",
+    [min, max]
+  );
+  return rows;
 };
 
-// get houses by price range
-const getHouseByPriceRange = (min, max, callback) => {
-  const sql = "SELECT * FROM house_details WHERE price BETWEEN ? AND ?";
-  db.query(sql, [min, max], callback);
-};
-
-module.exports = {
-  getSectors,
-  getHouseById,
-  getPlotById,
-  getHouseByBhk,
-  getPlotByRange,
-  getHouseByPriceRange
+// house price range
+exports.getHouseByPriceRange = async (min, max) => {
+  const [rows] = await db.query(
+    "SELECT * FROM house_details WHERE price BETWEEN ? AND ?",
+    [min, max]
+  );
+  return rows;
 };

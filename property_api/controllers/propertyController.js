@@ -1,59 +1,63 @@
 const propertyModel = require("../models/propertyModel");
 
 // sectors
-exports.getSectors = (req, res) => {
-  propertyModel.getSectors((err, result) => {
-    if (err) return res.status(500).json(err);
+exports.getSectors = async (req, res) => {
+  try {
+    const result = await propertyModel.getSectors();
     res.json(result);
-  });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 };
 
 // house by id
-exports.getHouseById = (req, res) => {
-  const id = req.params.id;
-
-  propertyModel.getHouseById(id, (err, result) => {
-    if (err) return res.status(500).json(err);
+exports.getHouseById = async (req, res) => {
+  try {
+    const result = await propertyModel.getHouseById(req.params.id);
     res.json(result);
-  });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 };
 
 // plot by id
-exports.getPlotById = (req, res) => {
-  const id = req.params.id;
-
-  propertyModel.getPlotById(id, (err, result) => {
-    if (err) return res.status(500).json(err);
+exports.getPlotById = async (req, res) => {
+  try {
+    const result = await propertyModel.getPlotById(req.params.id);
     res.json(result);
-  });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 };
 
 // house by bhk
-exports.getHouseByBhk = (req, res) => {
-  const bhk = req.params.bhk;
-
-  propertyModel.getHouseByBhk(bhk, (err, result) => {
-    if (err) return res.status(500).json(err);
+exports.getHouseByBhk = async (req, res) => {
+  try {
+    const result = await propertyModel.getHouseByBhk(req.params.bhk);
     res.json(result);
-  });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 };
 
 // plot range
-exports.getPlotByRange = (req, res) => {
-  const { min, max } = req.query;
-
-  propertyModel.getPlotByRange(min, max, (err, result) => {
-    if (err) return res.status(500).json(err);
+exports.getPlotByRange = async (req, res) => {
+  try {
+    const { min, max } = req.query;
+    const result = await propertyModel.getPlotByRange(min, max);
     res.json(result);
-  });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 };
 
 // house price range
-exports.getHouseByPriceRange = (req, res) => {
-  const { min, max } = req.query;
-
-  propertyModel.getHouseByPriceRange(min, max, (err, result) => {
-    if (err) return res.status(500).json(err);
+exports.getHouseByPriceRange = async (req, res) => {
+  try {
+    const { min, max } = req.query;
+    const result = await propertyModel.getHouseByPriceRange(min, max);
     res.json(result);
-  });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 };
