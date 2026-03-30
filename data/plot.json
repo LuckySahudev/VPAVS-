@@ -14,7 +14,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -33,7 +33,7 @@
     "land_type": "residential",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -52,7 +52,7 @@
     "land_type": "residential",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -71,7 +71,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -90,7 +90,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -109,7 +109,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -128,7 +128,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -147,7 +147,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -166,7 +166,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -185,7 +185,7 @@
     "land_type": "residential",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "disputed",
     "loan_approved": false
   },
@@ -204,7 +204,7 @@
     "land_type": "residential",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -223,7 +223,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "disputed",
     "loan_approved": false
   },
@@ -242,7 +242,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "normal",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "pending",
     "loan_approved": false
   },
@@ -261,7 +261,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -280,7 +280,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -299,7 +299,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "pending",
     "loan_approved": false
   },
@@ -318,7 +318,7 @@
     "land_type": "residential",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -337,7 +337,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -356,7 +356,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -375,7 +375,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -394,7 +394,7 @@
     "land_type": "residential",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "pending",
     "loan_approved": false
   },
@@ -413,7 +413,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -432,7 +432,7 @@
     "land_type": "mixed",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -451,7 +451,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -470,7 +470,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -489,7 +489,7 @@
     "land_type": "mixed",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -508,7 +508,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -527,7 +527,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -546,7 +546,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "pending",
     "loan_approved": false
   },
@@ -565,7 +565,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -584,7 +584,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "normal",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -603,7 +603,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "pending",
     "loan_approved": false
   },
@@ -622,7 +622,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -641,7 +641,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "pending",
     "loan_approved": false
   },
@@ -660,7 +660,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -679,7 +679,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -698,7 +698,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -717,7 +717,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -736,7 +736,7 @@
     "land_type": "mixed",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -755,7 +755,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -774,7 +774,7 @@
     "land_type": "residential",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "pending",
     "loan_approved": false
   },
@@ -793,7 +793,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -812,7 +812,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -831,7 +831,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "disputed",
     "loan_approved": false
   },
@@ -850,7 +850,7 @@
     "land_type": "mixed",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "pending",
     "loan_approved": false
   },
@@ -869,7 +869,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -888,7 +888,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -907,7 +907,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -926,7 +926,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "pending",
     "loan_approved": false
   },
@@ -945,7 +945,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "normal",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -964,7 +964,7 @@
     "land_type": "mixed",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -983,7 +983,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -1002,7 +1002,7 @@
     "land_type": "residential",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -1021,7 +1021,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -1040,7 +1040,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "normal",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -1059,7 +1059,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -1078,7 +1078,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "disputed",
     "loan_approved": false
   },
@@ -1097,7 +1097,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "normal",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -1116,7 +1116,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -1135,7 +1135,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -1154,7 +1154,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -1173,7 +1173,7 @@
     "land_type": "residential",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -1192,7 +1192,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "normal",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "disputed",
     "loan_approved": false
   },
@@ -1211,7 +1211,7 @@
     "land_type": "residential",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -1230,7 +1230,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -1249,7 +1249,7 @@
     "land_type": "residential",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -1268,7 +1268,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "normal",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -1287,7 +1287,7 @@
     "land_type": "mixed",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -1306,7 +1306,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -1325,7 +1325,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "normal",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "pending",
     "loan_approved": false
   },
@@ -1344,7 +1344,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -1363,7 +1363,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -1382,7 +1382,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -1401,7 +1401,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -1420,7 +1420,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "pending",
     "loan_approved": false
   },
@@ -1439,7 +1439,7 @@
     "land_type": "residential",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -1458,7 +1458,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -1477,7 +1477,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -1496,7 +1496,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "pending",
     "loan_approved": false
   },
@@ -1515,7 +1515,7 @@
     "land_type": "residential",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -1534,7 +1534,7 @@
     "land_type": "mixed",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -1553,7 +1553,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -1572,7 +1572,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -1591,7 +1591,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -1610,7 +1610,7 @@
     "land_type": "residential",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -1629,7 +1629,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -1648,7 +1648,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -1667,7 +1667,7 @@
     "land_type": "mixed",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -1686,7 +1686,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "pending",
     "loan_approved": false
   },
@@ -1705,7 +1705,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -1724,7 +1724,7 @@
     "land_type": "residential",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "disputed",
     "loan_approved": false
   },
@@ -1743,7 +1743,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "pending",
     "loan_approved": false
   },
@@ -1762,7 +1762,7 @@
     "land_type": "mixed",
     "boundary_wall": true,
     "soil_type": "normal",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -1781,7 +1781,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "pending",
     "loan_approved": false
   },
@@ -1800,7 +1800,7 @@
     "land_type": "residential",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "pending",
     "loan_approved": false
   },
@@ -1819,7 +1819,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "normal",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -1838,7 +1838,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -1857,7 +1857,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -1876,7 +1876,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "normal",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "disputed",
     "loan_approved": false
   },
@@ -1895,7 +1895,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -1914,7 +1914,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -1933,7 +1933,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "normal",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -1952,7 +1952,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -1971,7 +1971,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "pending",
     "loan_approved": false
   },
@@ -1990,7 +1990,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "disputed",
     "loan_approved": false
   },
@@ -2009,7 +2009,7 @@
     "land_type": "residential",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "disputed",
     "loan_approved": false
   },
@@ -2028,7 +2028,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -2047,7 +2047,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "pending",
     "loan_approved": false
   },
@@ -2066,7 +2066,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "disputed",
     "loan_approved": false
   },
@@ -2085,7 +2085,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -2104,7 +2104,7 @@
     "land_type": "mixed",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -2123,7 +2123,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "disputed",
     "loan_approved": false
   },
@@ -2142,7 +2142,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -2161,7 +2161,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "normal",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "pending",
     "loan_approved": false
   },
@@ -2180,7 +2180,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -2199,7 +2199,7 @@
     "land_type": "mixed",
     "boundary_wall": true,
     "soil_type": "normal",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -2218,7 +2218,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "pending",
     "loan_approved": false
   },
@@ -2237,7 +2237,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -2256,7 +2256,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -2275,7 +2275,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "pending",
     "loan_approved": false
   },
@@ -2294,7 +2294,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -2313,7 +2313,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -2332,7 +2332,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -2351,7 +2351,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "normal",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "disputed",
     "loan_approved": false
   },
@@ -2370,7 +2370,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "disputed",
     "loan_approved": false
   },
@@ -2389,7 +2389,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "disputed",
     "loan_approved": false
   },
@@ -2408,7 +2408,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "disputed",
     "loan_approved": false
   },
@@ -2427,7 +2427,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -2446,7 +2446,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "disputed",
     "loan_approved": false
   },
@@ -2465,7 +2465,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -2484,7 +2484,7 @@
     "land_type": "mixed",
     "boundary_wall": true,
     "soil_type": "normal",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -2503,7 +2503,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -2522,7 +2522,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -2541,7 +2541,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "normal",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -2560,7 +2560,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -2579,7 +2579,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "disputed",
     "loan_approved": false
   },
@@ -2598,7 +2598,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -2617,7 +2617,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -2636,7 +2636,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "booked",
+    "property_status": "booked",
     "registration_status": "disputed",
     "loan_approved": true
   },
@@ -2655,7 +2655,7 @@
     "land_type": "commercial",
     "boundary_wall": true,
     "soil_type": "normal",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -2674,7 +2674,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "pending",
     "loan_approved": false
   },
@@ -2693,7 +2693,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -2712,7 +2712,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -2731,7 +2731,7 @@
     "land_type": "mixed",
     "boundary_wall": true,
     "soil_type": "rocky",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "disputed",
     "loan_approved": false
   },
@@ -2750,7 +2750,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "rocky",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -2769,7 +2769,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "disputed",
     "loan_approved": false
   },
@@ -2788,7 +2788,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "clay",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "pending",
     "loan_approved": true
   },
@@ -2807,7 +2807,7 @@
     "land_type": "mixed",
     "boundary_wall": false,
     "soil_type": "normal",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "clear",
     "loan_approved": false
   },
@@ -2826,7 +2826,7 @@
     "land_type": "commercial",
     "boundary_wall": false,
     "soil_type": "clay",
-    "plot_status": "available",
+    "property_status": "available",
     "registration_status": "clear",
     "loan_approved": true
   },
@@ -2845,7 +2845,7 @@
     "land_type": "residential",
     "boundary_wall": true,
     "soil_type": "normal",
-    "plot_status": "sold",
+    "property_status": "sold",
     "registration_status": "clear",
     "loan_approved": true
   }

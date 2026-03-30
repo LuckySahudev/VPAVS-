@@ -51,3 +51,41 @@ house object structure.
   "registration_status": "clear",        // clear | pending | disputed
   "loan_approved": true                  // Boolean
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// for data base formate to store data of sector is 
+
+(
+    sector ,
+    average_income_level ,
+    population_density ,
+    rental_demand ,
+    transaction_volume ,
+    nearby_metro_distance_km ,
+    national_highway_distance_km ,
+    railway_station_distance_km ,
+    nearest_hospital_distance_km ,
+    nearest_mall_distance_km ,
+    nearest_college_distance_km ,
+    industrial_rating ,
+    pollution_rate ,
+    crime_rate ,
+    traffic_rate ,
+    sports_club_rating ,
+    private_clinic_rating ,
+    active_government_projects ,
+    future_government_projects ,
+    average_property_price_per_sqft 
+  )
+

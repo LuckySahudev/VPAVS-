@@ -6,6 +6,15 @@ exports.getSectors = async () => {
   return rows;
 };
 
+// get specific sector 
+exports.getSectorById = async (id) => {
+  const [rows] = await db.query(
+    "SELECT * FROM sector_details WHERE id = ?",
+    [id]
+  );
+  return rows[0];
+};
+
 // house by id
 exports.getHouseById = async (id) => {
   const [rows] = await db.query(

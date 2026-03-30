@@ -5,6 +5,8 @@ const propertyController = require("../controllers/propertyController");
 
 router.get("/sectors", propertyController.getSectors);
 
+router.get("/sectors/:id", getSectorById);
+
 router.get("/house/:id", propertyController.getHouseById);
 
 router.get("/plot/:id", propertyController.getPlotById);

@@ -10,6 +10,18 @@ exports.getSectors = async (req, res) => {
   }
 };
 
+// get specific sector  
+exports.getSectorById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const result = await propertyModel.getSectorById(id);
+
+    res.json(result);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+};
+
 // house by id
 exports.getHouseById = async (req, res) => {
   try {
