@@ -9,7 +9,7 @@ exports.getSectors = async () => {
 // get specific sector 
 exports.getSectorById = async (id) => {
   const [rows] = await db.query(
-    "SELECT * FROM sector_details WHERE id = ?",
+    "SELECT * FROM sector_details WHERE sector = ?",
     [id]
   );
   return rows[0];
