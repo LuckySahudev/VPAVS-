@@ -3,9 +3,9 @@ const router = express.Router();
 
 const propertyController = require("../controllers/propertyController");
 
-router.get("/sectors", propertyController.getSectors);
+router.get("/sectors/:id", propertyController.getSectorById);
 
-router.get("/sectors/:id", getSectorById);
+router.get("/sectors", propertyController.getSectors);
 
 router.get("/house/:id", propertyController.getHouseById);
 
