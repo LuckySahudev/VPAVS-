@@ -92,17 +92,16 @@ btn1.addEventListener("click",(e)=>{
 async function loadData(var1 , var2) {
     container.innerHTML = "";
     if( var1 === "plot"){
-        let response = await fetch('./data/plot.json');
-        let data = await response.json();
-        console.log(data); // this will be the array from the JSON
+         // this will be the array from the JSON
         temp1 = var2*2;
         temp2 = temp1 + 1;
-        let finaldata = data.filter((val)=>{
-            return ( val["area_sqft"] > areaRange2[temp1] && val["area_sqft"] <= areaRange2[temp2])
-        })
-        console.log(finaldata);
+        
+        let response = await fetch(`https://vpavs.onrender.com/api/properties/plots/range?min=${areaRange2[temp1]}&max=${areaRange2[temp2]}`);
+        let data = await response.json();
+        console.log(data);
+        
 
-        for(val of finaldata){
+        for(val of data){
             let item = document.createElement("div");
             item.classList.add("item");
             let h2 = document.createElement("h2");
@@ -122,8 +121,10 @@ async function loadData(var1 , var2) {
         }
     }
     else{
-        let temp = houseType[var2] ; 
-        let response = await fetch(`./data/${temp}.json`);
+        let temp = 0;
+        if(var2 == 0) temp = 2;         // for 2bhk request 
+        else temp = 3;                  // for 3bhk request 
+        let response = await fetch(`https://vpavs.onrender.com/api/properties/house/bhk/${temp}`);
         let data = await response.json();
         console.log(data); // this will be the array from the JSON
         for(val of data){
@@ -164,35 +165,21 @@ addEventListener("click",(e)=>{
 // fatching data 
 async function fatchDetail(id) {
 
-    let URL = '';
-    if(id.charAt(0) == 'P'){
-        URL = "./data/plot.json";
-    }
-    else if(id.charAt(0) == '2'){
-        URL = "./data/2bhk.json";
-    }
-    else if(id.charAt(0) == '3'){
-        URL = "./data/3bhk.json";
+    let URL = "";
+
+    if (id.charAt(0) == 'P') {
+        URL = `https://vpavs.onrender.com/api/properties/plot/${id}`;
+    } else {
+        URL = `https://vpavs.onrender.com/api/properties/house/${id}`;
     }
 
+    
     let response = await fetch(URL);   
-    console.log(response);
+
     let data = await response.json();
     console.log(data);
 
-    let finalEl = "";
-
-    for(let val of data){
-        if(val["id"] === id){
-            finalEl = val;
-            break;
-        }
-    }
-
-    if(!finalEl){
-        container.innerHTML = "Data is not Available";
-        return ;
-    }
+    let finalEl = data[0];
 
     printDetail(finalEl);
     return;

@@ -61,7 +61,6 @@ header img{
     margin: 0px 8vw;
     border-radius: 5px;
     border: 1px solid lightgray;
-    
 }
 #searchBar button{
     background-color: white;
@@ -121,17 +120,19 @@ header img{
     width: 25%;
     padding: 10px 30px;
     margin: 10px;
-    border: 2px solid black;
+    border: 2px solid lightgray;
     border-radius: 10px;
     cursor: pointer;
+    box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.3);
 }
 .item:hover{
-    background-color: lightgray;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.6);
+    padding: 11px 31px;
+    margin: 9px;
 }
 
 main{
     overflow: hidden;
-    border: solid 1px black;
     height: 80%;
     position: relative;
     top: 11vh;
@@ -143,13 +144,65 @@ main{
     flex-wrap: wrap;
 }
 
-.status{
-    overflow: hidden;
+.status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    scrollbar-width: none;
     height: 95%;
     width: 22%;
-    border: solid 1px black;
-    border-radius: 10px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #ffffff, #f5f5f5);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    font-family: 'Segoe UI', sans-serif;
+    transition: all 0.3s ease;
 }
+
+/* Hover effect */
+.status:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Header */
+.status .head {
+    width: 92%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 0.8rem;
+    border-radius: 12px;
+    background-color:#665d5d;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+/* Important info */
+.status .print1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0.6rem 0;
+}
+
+/* Normal info */
+.status .print {
+    font-size: 0.95rem;
+    margin: 0.4rem 0;
+    color: #444;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+
+/* Improve spacing between sections */
+.status h2,
+.status h3,
+.status p {
+    line-height: 1.4;
+}
+
 .container{
     padding: 0px 0px 50px 0px;
     height: 100%;
@@ -171,26 +224,5 @@ main{
 }
 
 
-.head{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-color:  rgb(106, 100, 95);
-    color: white;
-    height: 7vh;
 
-}
-.print{
-    font-size: large;
-    width: 100%;
-    margin: 5px 10px;
-}
-.print1{
-    width: 100%;
-    margin: 5px 10px;
-}
 
-.status h1{
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-}
