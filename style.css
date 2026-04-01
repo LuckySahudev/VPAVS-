@@ -7,7 +7,7 @@ body{
 }
 
 header{
-    max-height: 20%;
+    max-height: 10dvh;
     width: 100%;
     z-index: 1;
     position: fixed;
@@ -39,8 +39,9 @@ header img{
     margin: 0px 5px;
     padding: 5px 15px;
     border-radius: 5px;
-    height: 4vh;
+    height: auto;
     width: 10vw;
+    font-size: 1rem;
     border: solid 1px lightgray;
 }
 #btn1{
@@ -116,8 +117,9 @@ header img{
     align-items: center;
 }
 .item{
+    font-weight: lighter;
     height: auto;
-    width: 25%;
+    width: 16.5rem;
     padding: 10px 30px;
     margin: 10px;
     border: 2px solid lightgray;
@@ -135,7 +137,7 @@ main{
     overflow: hidden;
     height: 80%;
     position: relative;
-    top: 11vh;
+    top: 11dvh;
     padding: 10px;
     width: 100% - 10px;
     display: flex;
@@ -145,9 +147,10 @@ main{
 }
 
 .status {
-    display: flex;
-    justify-content: center;
+    position:relative;
+    display: none;
     align-items: center;
+    flex-direction: column;
     overflow-y: auto;
     scrollbar-width: none;
     height: 95%;
@@ -160,9 +163,16 @@ main{
     transition: all 0.3s ease;
 }
 
+.status .details{
+    overflow-y: auto;
+    scrollbar-width: none;
+    padding-bottom: 2rem;
+}
+
+
+
 /* Hover effect */
 .status:hover {
-    transform: translateY(-2px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
 
@@ -176,7 +186,26 @@ main{
     border-radius: 12px;
     background-color:#665d5d;
     color: white;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.status .analize{
+    position: absolute;
+    bottom: 13px;
+    width: 94%;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    padding: 0.4rem;
+    border-radius: 12px;
+    background-color:#665d5d;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+.analize:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Important info */
@@ -206,12 +235,11 @@ main{
 .container{
     padding: 0px 0px 50px 0px;
     height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 74%;
-
     overflow-y: scroll;
     scrollbar-width: thin;
     overflow: auto;
