@@ -11,6 +11,7 @@ const main = document.querySelector("main");
 const container = document.querySelector(".container");
 let statusof = document.querySelector(".status");
 let stDetails = document.querySelector(".status .details");
+const analize = document.querySelector(".analize")
 const item = document.querySelectorAll(".item");
 const b2 = document.querySelector("#b3");
 const searchInput = document.querySelector("#search");
@@ -82,6 +83,12 @@ document.addEventListener("click", (e) => {
 // funtion for submit button 
 btn1.addEventListener("click",(e)=>{
     if( check === 0) return;
+
+    let loader = document.createElement("div");
+    loader.classList.add("loader");
+    container.innerHTML = "";
+    container.append(loader);
+
     container.style.width = "100%";
     statusof.style.display = "none";
     console.log(op1.value);
@@ -92,7 +99,9 @@ btn1.addEventListener("click",(e)=>{
 
 // funtion to add items on container 
 async function loadData(var1 , var2) {
-    container.innerHTML = "";
+
+    loaderCheck = true;
+
     if( var1 === "plot"){
          // this will be the array from the JSON
         temp1 = var2*2;
@@ -119,6 +128,12 @@ async function loadData(var1 , var2) {
             p.innerText = `Distance from Main Road  :  ${val["distance_from_main_road_km"]} || Plot id  :  `
             p.append(b);
             item.append(h2,h3,h4,p);
+            
+
+            if(loaderCheck){
+                container.innerHTML = "";
+                loaderCheck = false;
+            }
             container.append(item);
         }
     }
@@ -145,6 +160,10 @@ async function loadData(var1 , var2) {
             p.innerText = `Distance from Main Road  :  ${val["distance_from_main_road_km"]} || House id  :  `
             p.append(b);
             item.append(h2,h3,h4,p);
+            if(loaderCheck){
+                container.innerHTML = "";
+                loaderCheck = false;
+            }
             container.append(item);
         }
     }
@@ -155,46 +174,28 @@ async function loadData(var1 , var2) {
 addEventListener("click",(e)=>{
     if (e.target.classList.contains("item") || e.target.parentElement.classList.contains("item")){
 
+        statusof.style.display = "flex";
+        container.style.width = "74%";
+        stDetails.innerHTML = "";
+        stDetails.classList.add("align");
+        let loader = document.createElement("div");
+        loader.classList.add("loader");
+        stDetails.append(loader);
+
         let target = e.target;
         let item = e.target.closest(".item");
         let id = item.querySelector("#id");
         console.log(id.innerText);
         // calling to printDetail funtion 
-        fatchDetail(id.innerText);
+        fatchDetail(id.innerText ,0);
 
     }
 })
 
-// fatching data 
-async function fatchDetail(id) {
 
-    let URL = "";
 
-    if (id.charAt(0) == 'P') {
-        URL = `https://vpavs.onrender.com/api/properties/plot/${id}`;
-    } else {
-        URL = `https://vpavs.onrender.com/api/properties/house/${id}`;
-    }
-
-    
-    let response = await fetch(URL);   
-
-    let data = await response.json();
-    console.log(data);
-
-    let finalEl = data[0];
-
-    printDetail(finalEl);
-    return;
-}
-
-// printing data on status 
+// printing data on status bar 
 function printDetail(finalEl){
-
-    stDetails.innerHTML = "";
-    statusof.style.display = "flex";
-    stDetails.style.display = "inline";
-    stDetails.innerHTML = "";
 
     let head = document.querySelector(".head");
     head.innerText = `${(finalEl["type"])} ID  :  ${finalEl["id"]}`;
@@ -255,7 +256,10 @@ function printDetail(finalEl){
         soilType.classList.add("print");
         soilType.innerText = `Soil Type  :  ${finalEl["soil_type"]}`
 
-        container.style.width = "74%";
+        
+        stDetails.innerHTML = "";
+        stDetails.classList.remove("align");
+        
         stDetails.append(price,area,sector,cornerProperty,disFromMRoad,facing,registrationStatus,owner,ownerPhone,loanApprovel,landType,boundryWall,soilType);
     
     }
@@ -293,25 +297,54 @@ function printDetail(finalEl){
         furnishStatus.classList.add("print");
         furnishStatus.innerText = `FurnishStatus  :  ${finalEl["furnished_statusof"]}`
 
-        container.style.width = "74%";
+        stDetails.innerHTML = "";
+        stDetails.classList.remove("align");
+
         stDetails.append(price,area,sector,cornerProperty,disFromMRoad,facing,registrationStatus,owner,ownerPhone,loanApprovel,bhk,floors,bathrooms,balcony,parking,constuctYear,furnishStatus);
     }
     return;
 }
 
+// fatching single details -> printDetail
+async function fatchDetail(id,x) {     
+    
+    // x is refers to which funtion is called
+    // if x = 0 means clicked on item and if x = 1 means it is send by the searchbox
 
-// funtion to search button 
-b3.addEventListener("click",()=>{
-    searchData();
-    return;
-})
-searchInput.addEventListener("keydown",(e)=>{
-    if(e.key === "Enter"){
-        searchData();
+    let URL = "";
+
+    if (id.charAt(0) == 'P') {
+        URL = `https://vpavs.onrender.com/api/properties/plot/${id}`;
+    } else {
+        URL = `https://vpavs.onrender.com/api/properties/house/${id}`;
     }
-    return;
-})
 
+    
+    let response = await fetch(URL);   
+
+    let data = await response.json();
+
+    
+    if(data.length == 0){
+        container.innerHTML = "";
+        stDetails.innerHTML = "";
+        statusof.style.display = "none";
+        container.innerHTML = "<h2>Oh! Sorry Data in not Available</h2> ";
+        return;
+    }
+    
+    let finalEl = data[0];
+    
+    if(x != 0){
+        container.innerHTML = "";
+        container.innerHTML = `<h1>Property id ${finalEl["id"]} data showed in Status Bar </h1>`;
+    }
+    
+    printDetail(finalEl);
+    return;
+}
+
+// function to check input is valid or not  serachData() -> fetchdetail
 async function searchData(){
     let input = searchInput.value;
     searchInput.value = "";
@@ -325,16 +358,45 @@ async function searchData(){
     let idx0 = input.charAt(0);
     let idx1 = input.charAt(1);
 
+    container.innerHTML = "";
+    stDetails.innerHTML = "";
+    statusof.style.display = "flex";
+    container.style.width = "74%";
+    stDetails.classList.add("align");
+    let loader = document.createElement("div");
+    loader.classList.add("loader");
+    stDetails.append(loader);
+    loader = document.createElement("div");
+    loader.classList.add("loader");
+    container.append(loader);
+
     if( idx0 == 'P'){
-        container.innerHTML = `<h1>Property id ${input} data showed in Status Bar </h1>`
-        fatchDetail(input);
+        fatchDetail(input,1);       // one is refers that the fetchDetail is called by serachData
     }
     else if((idx0 == '2' || idx0 == '3') && idx1 == 'H'){
-        container.innerHTML = `<h1>Property id ${input} data showed in Status Bar </h1>`
-        fatchDetail(input);
+        fatchDetail(input,1);
     }
     else{
         container.innerHTML = "Invalid Input";
     }
     return;
 }
+
+// funtion for search button  -> fatchDetail 
+b3.addEventListener("click",()=>{
+    searchData();
+    return;
+})
+searchInput.addEventListener("keydown",(e)=>{
+    if(e.key === "Enter"){
+        searchData();
+    }
+    return;
+})
+
+// funtion of analize button 
+analize.addEventListener("click",()=>{
+    container.innerHTML = "";
+    container.innerHTML = "<h2>This feature will be added soon.</h2> ";
+    return;
+})
