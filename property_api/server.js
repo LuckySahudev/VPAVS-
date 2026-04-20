@@ -4,14 +4,14 @@ const express = require("express");
 const cors = require("cors");
 
 const propertyRoutes = require("./routes/propertyRoutes");
-const predictionRoute = require('./routes/predictionRoute');
+
 
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use('/api/predict', predictionRoute);
+
 
 app.get("/", (req, res) => {
   res.send("VPAVS Property API Running");
