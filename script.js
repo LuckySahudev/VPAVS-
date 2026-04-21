@@ -395,8 +395,28 @@ searchInput.addEventListener("keydown",(e)=>{
 })
 
 // funtion of analize button 
-analize.addEventListener("click",()=>{
-    container.innerHTML = "";
-    container.innerHTML = "<h2>This feature will be added soon.</h2> ";
-    return;
-})
+analize.addEventListener("click", async () => {
+
+    const head = statusof.querySelector(".head");
+    let text = head.innerText;
+
+    // split text
+    let arr = text.split(" ");
+
+    // safer extraction (last value instead of fixed index)
+    let id = arr[arr.length - 1];
+
+   
+
+    let URL = `https://vpavs-1.onrender.com/predict/house/${id}`;
+
+    try {
+        let response = await fetch(URL);
+
+        let data = await response.json(); // ✅ FIXED
+
+        console.log(data);
+    } catch (err) {
+        console.error("Fetch error:", err);
+    }
+});
