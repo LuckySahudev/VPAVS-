@@ -4,6 +4,7 @@
 }
 body{
     height: 86vh;
+    min-width: 1000px;
 }
 
 header{
@@ -231,7 +232,7 @@ main{
     line-height: 1.4;
 }
 
-.container{
+.container{   
     padding: 0px 0px 50px 0px;
     height: 100%;
     width: 100%;
@@ -273,4 +274,53 @@ main{
 
 .hidden {
     display: none;
+}
+
+
+.canalize{
+
+    width: 95%;
+    height: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.c1{
+    box-sizing: border-box;
+    padding: 20px;
+    width: calc(96% + 0.6rem);
+    height: 44%;
+    border: solid 1px lightgray ;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.chartWrapper {
+    flex: 1;              /* 🔥 fills remaining space */
+    position: relative;
+}
+
+.chartWrapper canvas {
+    width: 90% ;
+    height: 100% ;
+}
+.c2, .c3{
+    box-sizing: border-box;
+    margin: 0.1rem 0.2rem;
+    width: 48%;
+    height: 44%;
+    border: solid 1px lightgray ;
+    border-radius: 0.5rem;
+}
+.c4{
+    box-sizing: border-box;
+    width: calc(96% + 0.6rem);
+    height: 8%;
+    border: solid 1px lightgray ;
+    border-radius: 0.5rem;
 }

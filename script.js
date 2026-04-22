@@ -15,6 +15,7 @@ const analize = document.querySelector(".analize")
 const item = document.querySelectorAll(".item");
 const b2 = document.querySelector("#b3");
 const searchInput = document.querySelector("#search");
+let property ;
 
 
 // funtion for adding second select menu
@@ -197,6 +198,7 @@ addEventListener("click",(e)=>{
 // printing data on status bar 
 function printDetail(finalEl){
 
+    property = finalEl;
     let head = document.querySelector(".head");
     head.innerText = `${(finalEl["type"])} ID  :  ${finalEl["id"]}`;
 
@@ -394,29 +396,178 @@ searchInput.addEventListener("keydown",(e)=>{
     return;
 })
 
-// funtion of analize button 
+// funtion to click on analize button 
 analize.addEventListener("click", async () => {
-
     const head = statusof.querySelector(".head");
+    container.innerHTML = "";
+    let loader = document.createElement("div");
+    loader.classList.add("loader");
+    container.innerHTML = "";
+    container.append(loader);
     let text = head.innerText;
-
-    // split text
     let arr = text.split(" ");
-
-    // safer extraction (last value instead of fixed index)
     let id = arr[arr.length - 1];
-
-   
-
-    let URL = `https://vpavs-1.onrender.com/predict/house/${id}`;
-
-    try {
-        let response = await fetch(URL);
-
-        let data = await response.json(); // ✅ FIXED
-
-        console.log(data);
-    } catch (err) {
-        console.error("Fetch error:", err);
+    let URL1 ;
+    let URL2 ;
+    let sector = Number(property.sector);
+    console.log(sector);
+    if(id.charAt(0)=== 'p' || id.charAt(0) === 'P' ){
+        URL1 = `https://vpavs-1.onrender.com/predict/plot/${id}`;
     }
+    else{
+        URL1 = `https://vpavs-1.onrender.com/predict/house/${id}`;
+    }
+    URL2 = `https://vpavs.onrender.com/api/properties/sectors/${sector}`
+    
+    let response = await fetch(URL1);
+    let data = await response.json();
+    const predictions = data.predictions; 
+
+    console.log("check1");
+    response = await fetch(URL2);
+    const sectorDetails = await response.json();
+    console.log("check2");
+    addAnalisis(id,predictions,sectorDetails);
+    console.log("check3");
 });
+
+function addAnalisis(id, predictions, sectorDetails) {
+
+    container.innerHTML = "";
+
+    let canalize = document.createElement("div");
+    canalize.classList.add("canalize");
+
+    let c1 = document.createElement("div");
+    c1.classList.add("c1");
+
+    const title = document.createElement("h3");
+    title.innerText = "1. Property Valuation (5 Year Prediction)";
+
+    const canvas = document.createElement("canvas");
+    canvas.id = "priceChart";
+
+    c1.appendChild(title);
+    c1.appendChild(canvas);
+    canalize.append(c1);
+    container.append(canalize);
+
+    // ✅ SORT FIRST
+    predictions.sort((a, b) => a.year - b.year);
+
+    // ✅ ADD CURRENT YEAR DATA
+    if (predictions.length > 0) {
+        const firstYear = predictions[0].year;
+        const currentYear = firstYear - 1;
+
+        const currentPrice =
+            property.price ||
+            property.price_per_sqft ||
+            property.predicted_price ||
+            50000; // fallback
+
+        const firstGrowth = predictions[0].growth_percent || 10;
+        const currentGrowth = Math.max(firstGrowth - 20, 5);
+
+        predictions.unshift({
+            year: currentYear,
+            predicted_price: currentPrice,
+            growth_percent: currentGrowth
+        });
+    }
+
+    // ✅ MAP AFTER ADDING
+    const years = predictions.map(d => d.year);
+    const prices = predictions.map(d => d.predicted_price);
+    const growth = predictions.map(d => d.growth_percent);
+
+    // ✅ CHART
+    new Chart(canvas, {
+        type: "line",
+        data: {
+            labels: years,
+            datasets: [
+                {
+                    label: "Price (₹)",
+                    data: prices,
+                    tension: 0.4,
+                    borderWidth: 2,
+                    pointRadius: 5
+                },
+                {
+                    label: "Growth %",
+                    data: growth,
+                    borderDash: [6, 6],
+                    tension: 0.4,
+                    yAxisID: "y1",
+                    pointRadius: 4
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: {
+                mode: "index",
+                intersect: false
+            },
+            plugins: {
+                legend: {
+                    position: "top"
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function (context) {
+                            if (context.dataset.label.includes("Price")) {
+                                return "₹ " + context.raw.toLocaleString();
+                            }
+                            return context.raw + "%";
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: "Year"
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: "Price (₹)"
+                    },
+                    ticks: {
+                        callback: value => "₹ " + value
+                    },
+                    beginAtZero: true
+                },
+                y1: {
+                    position: "right",
+                    title: {
+                        display: true,
+                        text: "Growth %"
+                    },
+                    ticks: {
+                        callback: value => value + "%"
+                    },
+                    grid: {
+                        drawOnChartArea: false
+                    },
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    let c2 = document.createElement("div");
+    c2.classList.add("c2");
+    let c3 = document.createElement("div");
+    c3.classList.add("c3");
+    let c4 = document.createElement("div");
+    c4.classList.add("c4");
+    canalize.append(c2,c3,c4);
+    container.append(canalize);
+}
+
