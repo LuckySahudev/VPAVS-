@@ -5,21 +5,25 @@
 body{
     height: 86vh;
     min-width: 1000px;
+    background-color: white;
+    color: #0f2a47;
 }
 
 header{
+    position: relative;
     max-height: 10dvh;
     min-width: 1000px;
     width: 100%;
     z-index: 1;
     position: fixed;
-    background-color: rgb(150, 140, 131);
+    background: linear-gradient(90deg, #1f3f6b, #0f2a47);
+    color: white;
     padding: 10px;
     display: flex;
     align-items: center;
 }
 header img{
-    border: solid 1px lightgray;
+    border: 1px solid #8aa3b8;
     border-radius: 50%;
     height: 60px;
 }
@@ -44,18 +48,24 @@ header img{
     height: auto;
     width: 10vw;
     font-size: 1rem;
-    border: solid 1px lightgray;
+    border: 1px solid #8aa3b8;
+    background-color: #f4f7fb;
+    color: #0f2a47;
 }
 #btn1{
     padding: 5px 30px;
-    background-color: rgb(65, 58, 53);
+    background: linear-gradient(135deg, #1f3f6b, #4f6f8f);
     color: white;
     font-size: small;
     border-radius: 20px;
     cursor: pointer;
 }
+#btn1:hover{
+    background: linear-gradient(135deg, #0f2a47, #1f3f6b);
+}
 #searchBar{
-    background-color: white;
+    background: #ffffff;
+    border: 1px solid #8aa3b8;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -63,10 +73,9 @@ header img{
     padding: 5px 10px;
     margin: 0px 8vw;
     border-radius: 5px;
-    border: 1px solid lightgray;
 }
 #searchBar button{
-    background-color: white;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,6 +83,7 @@ header img{
     cursor: pointer;
 }
 #search{
+    background-color: white;
     border: none;
     display: flex;
     align-items: center;
@@ -83,7 +93,9 @@ header img{
     height: 2vh;
 }
 .btn2{
-    background-color: rgb(150, 140, 131);
+
+    background: linear-gradient(90deg, #1f3f6b, #0f2a47);
+    color: white;
     border: none;
     width: 5vh;
     height: 5vh;
@@ -95,10 +107,12 @@ header img{
     cursor: pointer;
 }
 .btn2:hover{
-    background-color: rgb(106, 100, 95);
+    background: linear-gradient(90deg, #1f3f6b, #081828);
 }
 .howToUse{
-    background-color: rgb(186, 183, 183);
+    background: #ffffff;
+    border: 1px solid #8aa3b8;
+    color: #0f2a47;
     border-radius: 5px;
     visibility: hidden;
     overflow-y: auto;
@@ -117,6 +131,8 @@ header img{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    right: 2rem;
 }
 .item{
     font-weight: lighter;
@@ -124,13 +140,16 @@ header img{
     width: 16.5rem;
     padding: 10px 30px;
     margin: 10px;
-    border: 2px solid lightgray;
+    background: linear-gradient(135deg, #ffffff, #eef2f6);
+    border: 2px solid #d9ded9;
+    color: #0f2a47;
+    box-shadow: 0 8px 20px rgba(15,42,71,0.08);
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.3);
 }
 .item:hover{
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.6);
+    box-shadow: 0 12px 25px rgba(15,42,71,0.4);
     padding: 11px 31px;
     margin: 9px;
 }
@@ -156,7 +175,8 @@ main{
     height: 95%;
     width: 22%;
     border-radius: 16px;
-    background: linear-gradient(135deg, #ffffff, #f5f5f5);
+    background: linear-gradient(135deg, #ffffff, #eef2f6);
+    border: 1px solid #d9ded9;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     padding: 1rem;
     font-family: 'Segoe UI', sans-serif;
@@ -185,7 +205,7 @@ main{
     text-align: center;
     padding: 0.8rem;
     border-radius: 12px;
-    background-color:#665d5d;
+    background: linear-gradient(135deg, #1f3f6b, #0f2a47);
     color: white;
     margin-bottom: 0.5rem;
 }
@@ -197,15 +217,15 @@ main{
     font-size: 1rem;
     font-weight: 400;
     text-align: center;
-    padding: 0.4rem;
+    padding: 0.6rem;
     border-radius: 12px;
-    background-color:#665d5d;
+    background: linear-gradient(135deg, #1f3f6b, #0f2a47);
     color: white;
     cursor: pointer;
     border: none;
 }
 .analize:hover{
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, #0e2c56, #0f2a47);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -220,9 +240,9 @@ main{
 .status .print {
     font-size: 0.95rem;
     margin: 0.4rem 0;
-    color: #444;
+    color: #4f6f8f;
+    border-bottom: 1px solid #d9ded9;
     padding-bottom: 4px;
-    border-bottom: 1px solid #e0e0e0;
 }
 
 
@@ -261,8 +281,8 @@ main{
 .loader {
     width: 40px;
     height: 40px;
-    border: 5px solid #ccc;
-    border-top: 5px solid #333;
+    border: 5px solid #d9ded9;
+    border-top: 5px solid #1f3f6b;
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -279,7 +299,7 @@ main{
 
 
 .canalize{
-
+    position: relative;
     width: 95%;
     height: 95%;
     display: flex;
@@ -296,7 +316,8 @@ main{
     padding: 15px;
     width: calc(96% + 0.6rem);
     height: 44%;
-    border: solid 1px lightgray ;
+    background: linear-gradient(135deg, #ffffff, #eef2f6);
+    border: 1px solid #d9ded9;
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -309,6 +330,7 @@ main{
 .chartWrapper canvas {
     width: 90% ;
     height: 100% ;
+    
 }
 .c2, .c3{
     padding: 15px;
@@ -316,7 +338,8 @@ main{
     margin: 0.1rem 0.2rem;
     width: 48%;
     height: 44%;
-    border: solid 1px lightgray ;
+    background: linear-gradient(135deg, #ffffff, #eef2f6);
+    border: 1px solid #d9ded9;
     border-radius: 0.5rem;
 }
 .c4{
@@ -324,6 +347,27 @@ main{
     box-sizing: border-box;
     width: calc(96% + 0.6rem);
     height: 8%;
-    border: solid 1px lightgray ;
+    background: linear-gradient(135deg, #ffffff, #eef2f6);
+    border: 1px solid #d9ded9;
     border-radius: 0.5rem;
 }
+.backbtn{
+    width: 2.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    top: 2rem;
+    right: 3rem;
+    border-radius: 5px;
+    background: #ffffff;
+    border: 1px solid #8aa3b8;
+    color: #0f2a47;
+    
+    
+}
+.backbtn:hover{
+    background-color: #eef2f6;
+}
+

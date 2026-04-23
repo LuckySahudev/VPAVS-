@@ -16,6 +16,7 @@ const item = document.querySelectorAll(".item");
 const b2 = document.querySelector("#b3");
 const searchInput = document.querySelector("#search");
 let property ;
+let containerProperties;
 
 
 // funtion for adding second select menu
@@ -399,6 +400,7 @@ searchInput.addEventListener("keydown",(e)=>{
 // funtion to click on analize button 
 analize.addEventListener("click", async () => {
     const head = statusof.querySelector(".head");
+    containerProperties = String(container.innerHTML);
     container.innerHTML = "";
     let loader = document.createElement("div");
     loader.classList.add("loader");
@@ -432,7 +434,7 @@ analize.addEventListener("click", async () => {
 });
 
 function addAnalisis(id, predictions, sectorDetails) {
-
+    console.log(sectorDetails,property);
     container.innerHTML = "";
 
     let canalize = document.createElement("div");
@@ -565,20 +567,150 @@ function addAnalisis(id, predictions, sectorDetails) {
 
     let c2 = document.createElement("div");
     c2.classList.add("c2");
-    let c3 = document.createElement("div");
-    c3.classList.add("c3");
-    let c4 = document.createElement("div");
-    c4.classList.add("c4");
 
-
+    const canvas2 = document.createElement("canvas");
+    canvas2.id = "sectorChart";
 
     let title2 = document.createElement("h3");
     title2.innerText = "2. Sector Analysis (Key Factors)";
-    c2.append(title2);
+    c2.appendChild(title2);
+    c2.appendChild(canvas2);
+
+    new Chart(canvas2, {
+        type: "radar",
+        data: {
+            labels: [
+            "Rental Demand",
+            "Industrial Rating",
+            "Traffic Rate",
+            "Crime Rate",
+            "Pollution Rate",
+            "Sports Club Rating"
+            ],
+            datasets: [{
+            label: "Sector Score (out of 10)",
+            data: [
+                sectorDetails.rental_demand,
+                sectorDetails.industrial_rating,
+                sectorDetails.traffic_rate,
+                sectorDetails.crime_rate,
+                sectorDetails.pollution_rate,
+                sectorDetails.sports_club_rating
+            ],
+            borderWidth: 2,
+            pointRadius: 4,
+            fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false, // 🔥 important
+            plugins: {
+            legend: {
+                position: "bottom"
+            }
+            },
+            scales: {
+            r: {
+                beginAtZero: true,
+                min: 0,
+                max: 10,
+                ticks: {
+                stepSize: 2
+                }
+            }
+            }
+        }
+        });
+
+
+
+    let backbtn = document.createElement("button");
+    backbtn.classList.add("backbtn");
+    backbtn.innerHTML = "←";
+
+    let c3 = document.createElement("div");
+    c3.classList.add("c3");
     let title3 = document.createElement("h3");
     title3.innerText = "3. Nearby Infrastructure (Distance in km)";
+    const canvas3 = document.createElement("canvas");
+    canvas3.id = "distanceChart";
     c3.append(title3);
-    canalize.append(c2,c3,c4);
+    c3.appendChild(canvas3);
+
+    const base = property.distance_from_main_road_km || 0;
+
+    const distances = [
+    sectorDetails.nearby_metro_distance_km + base,
+    sectorDetails.nearest_hospital_distance_km + base,
+    sectorDetails.nearest_mall_distance_km + base,
+    sectorDetails.nearest_college_distance_km + base,
+    sectorDetails.railway_station_distance_km + base,
+    sectorDetails.national_highway_distance_km + base
+    ];
+
+    new Chart(canvas3, {
+    type: "bar",
+    data: {
+        labels: [
+        "Metro Station",
+        "Hospital",
+        "Mall",
+        "College",
+        "Railway Station",
+        "National Highway"
+        ],
+        datasets: [{
+        label: "Distance (KM)",
+        data: distances,
+        borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false, // 🔥 important
+        plugins: {
+        legend: {
+            display: false
+        },
+        tooltip: {
+            callbacks: {
+            label: function(context) {
+                return context.raw.toFixed(2) + " KM";
+            }
+            }
+        }
+        },
+        scales: {
+        y: {
+            beginAtZero: true,
+            title: {
+            display: true,
+            text: "Distance (KM)"
+            }
+        },
+        x: {
+            title: {
+            display: true,
+            text: "Amenities"
+            }
+        }
+        }
+    }
+    });
+   
+
+    let c4 = document.createElement("div");
+    c4.classList.add("c4");
+    canalize.append(c2,c3,c4,backbtn);
     container.append(canalize);
 }
+
+// funtion for back button in analysis window 
+document.addEventListener("click", (e) => {
+    if(e.target.classList.contains("backbtn")) {
+        container.innerHTML = "";
+        container.innerHTML = containerProperties;
+    }
+});
 
