@@ -452,6 +452,8 @@ function addAnalisis(id, predictions, sectorDetails) {
     canalize.append(c1);
     container.append(canalize);
 
+    canalize = container.querySelector(".canalize");
+
     // ✅ SORT FIRST
     predictions.sort((a, b) => a.year - b.year);
 
@@ -567,6 +569,15 @@ function addAnalisis(id, predictions, sectorDetails) {
     c3.classList.add("c3");
     let c4 = document.createElement("div");
     c4.classList.add("c4");
+
+
+
+    let title2 = document.createElement("h3");
+    title2.innerText = "2. Sector Analysis (Key Factors)";
+    c2.append(title2);
+    let title3 = document.createElement("h3");
+    title3.innerText = "3. Nearby Infrastructure (Distance in km)";
+    c3.append(title3);
     canalize.append(c2,c3,c4);
     container.append(canalize);
 }

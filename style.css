@@ -9,6 +9,7 @@ body{
 
 header{
     max-height: 10dvh;
+    min-width: 1000px;
     width: 100%;
     z-index: 1;
     position: fixed;
@@ -292,7 +293,7 @@ main{
 
 .c1{
     box-sizing: border-box;
-    padding: 20px;
+    padding: 15px;
     width: calc(96% + 0.6rem);
     height: 44%;
     border: solid 1px lightgray ;
@@ -310,6 +311,7 @@ main{
     height: 100% ;
 }
 .c2, .c3{
+    padding: 15px;
     box-sizing: border-box;
     margin: 0.1rem 0.2rem;
     width: 48%;
@@ -318,6 +320,7 @@ main{
     border-radius: 0.5rem;
 }
 .c4{
+    padding: 15px;
     box-sizing: border-box;
     width: calc(96% + 0.6rem);
     height: 8%;
