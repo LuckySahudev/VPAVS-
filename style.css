@@ -343,14 +343,35 @@ main{
     border-radius: 0.5rem;
 }
 .c4{
-    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
     box-sizing: border-box;
     width: calc(96% + 0.6rem);
-    height: 8%;
+    height: 10%;
     background: linear-gradient(135deg, #ffffff, #eef2f6);
     border: 1px solid #d9ded9;
     border-radius: 0.5rem;
 }
+
+.c4-child{
+    box-sizing: border-box;
+    padding: 5px 0px;
+    width: 19.5%;
+    height: 90%;
+    border: solid 1px lightgray;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.c4-child img{
+    width: 15%;
+}
+
 .backbtn{
     width: 2.5rem;
     height: 1.5rem;

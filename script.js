@@ -433,6 +433,9 @@ analize.addEventListener("click", async () => {
     console.log("check3");
 });
 
+
+
+// funtion to add tables on container after clicking analize button 
 function addAnalisis(id, predictions, sectorDetails) {
     console.log(sectorDetails,property);
     container.innerHTML = "";
@@ -702,6 +705,49 @@ function addAnalisis(id, predictions, sectorDetails) {
 
     let c4 = document.createElement("div");
     c4.classList.add("c4");
+    
+    let arr = new Array(5);
+
+    for(let i = 0 ; i <= 4 ; i++){
+        arr[i] = document.createElement("div");
+        arr[i].classList.add("c4-child");
+        let img = document.createElement("img");
+        img.classList.add("c4-img");
+        let c4Child2 = document.createElement("div");
+        c4Child2.classList.add("c4-child2");
+        let t1 = document.createElement("h5");
+        let t2 = document.createElement("h4");
+        c4Child2.append(t1,t2);
+        arr[i].append(img,c4Child2)
+    }
+    
+    console.log(sectorDetails);
+    arr[0].querySelector(".c4-img").src = "./img/users-alt.png";
+    arr[0].querySelector("h5").innerHTML = "Population Density";
+    arr[0].querySelector("h4").innerHTML = `${sectorDetails["population_density"]} /Km`;
+
+    arr[1].querySelector("img").src = "./img/money-income.png";
+    arr[1].querySelector("h5").innerHTML = "Average Income";
+    arr[1].querySelector("h4").innerHTML =`₹ ${ sectorDetails["average_income_level"]} /Y`;
+
+    arr[2].querySelector("img").src = "./img/growth-chart-invest.png";
+    arr[2].querySelector("h5").innerHTML = "Transaction Volume";
+    arr[2].querySelector("h4").innerHTML = `${sectorDetails["transaction_volume"]} /Hr`;
+
+    arr[3].querySelector("img").src = "./img/workflow-setting-alt.png";
+    arr[3].querySelector("h5").innerHTML = "Actice Govt. Project";
+    arr[3].querySelector("h4").innerHTML = sectorDetails["active_government_projects"];
+    
+    arr[4].querySelector("img").src = "./img/memo-circle-check.png";
+    arr[4].querySelector("h5").innerHTML = "Future Govt. Project";
+    arr[4].querySelector("h4").innerHTML = sectorDetails["future_government_projects"];
+
+
+    arr.forEach((ele)=>{
+        c4.append(ele);
+    })
+
+
     canalize.append(c2,c3,c4,backbtn);
     container.append(canalize);
 }
